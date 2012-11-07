@@ -5,6 +5,7 @@ import smobs
 
 ## Examples
 
+    # Setup DB connnection
     smobs.init('TEST')
     
     class Car(smobs.Document):
@@ -28,9 +29,15 @@ import smobs
     
     print 'There are {0} cars.'.format(Car.count())
     
+There are 3 cars.
+    
     print '{0} of them have 4 wheels.'.format(Car.count({'num_wheels' : 4}))
     
+2 of them have 4 wheels.
+    
     print 'The Toyota is {0}.'.format(Car.find({'make' : 'Toyota'})[0].colour)
+    
+The Toyota is Red.
     
     for c in Car.all():
         c.delete()
